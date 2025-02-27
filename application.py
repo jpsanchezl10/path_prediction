@@ -48,12 +48,12 @@ application.add_middleware(
 )
 
 
-EOU_API_KEY = os.getenv("EOU_API_KEY")
+PATH_API_KEY = os.getenv("PATH_API_KEY")
 
 PORT = int(os.environ.get('PORT', 8080))
 
 def authenticate(token: str):
-    return token == EOU_API_KEY
+    return token == PATH_API_KEY
 
 
 path_prediction_model = PathPredictor()

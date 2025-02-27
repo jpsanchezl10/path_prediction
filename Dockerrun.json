@@ -14,7 +14,7 @@
         ],
         "environment": [
           {
-            "name": "EOU_API_KEY",
+            "name": "PATH_API_KEY",
             "value": "sk-A6878SHFDJLFDNDZuFDSJL8sZxJLFS790SDFJLzDz-Mc8790SDFLLZ44hJLSFD897894qg-FSJF89AA"
           },
           {

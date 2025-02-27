@@ -23,10 +23,10 @@ async def communicate_with_websocket():
     and processes the server's response, continuing until user presses Enter.
     """
     # Retrieve the API key from environment variables (or use default if not set)
-    EOU_API_KEY = os.getenv("EOU_API_KEY") or "sk-A6878SHFDJLFDNDZuFDSJL8sZxJLFS790SDFJLzDz-Mc8790SDFLLZ44hJLSFD897894qg-FSJF89AA"
+    PATH_API_KEY = os.getenv("PATH_API_KEY") or "sk-A6878SHFDJLFDNDZuFDSJL8sZxJLFS790SDFJLzDz-Mc8790SDFLLZ44hJLSFD897894qg-FSJF89AA"
 
     # Define the WebSocket URI
-    uri = f"ws://localhost/v1/stream?api_key={EOU_API_KEY}"
+    uri = f"ws://localhost/v1/stream?api_key={PATH_API_KEY}"
 
     try:
         # Establish the WebSocket connection
