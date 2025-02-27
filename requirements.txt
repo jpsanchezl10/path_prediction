@@ -1,0 +1,10 @@
+websockets==13.0.1
+python-dotenv==1.0.1
+fastapi==0.115.2
+pydantic
+starlette==0.38.5
+numpy==1.26.4
+uvicorn==0.30.6
+transformers==4.47.1
+torch==2.5.1
+sentence-transformers==3.4.1

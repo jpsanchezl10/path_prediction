@@ -1,0 +1,28 @@
+{
+    "AWSEBDockerrunVersion": "2",
+    "containerDefinitions": [
+      {
+        "name": "application",
+        "image": "317587555772.dkr.ecr.us-east-2.amazonaws.com/virtualscale/end-of-utterance:latest",
+        "essential": true,
+        "memory": 3800,
+        "portMappings": [
+          {
+            "hostPort": 80,
+            "containerPort": 80
+          }
+        ],
+        "environment": [
+          {
+            "name": "EOU_API_KEY",
+            "value": "sk-A6878SHFDJLFDNDZuFDSJL8sZxJLFS790SDFJLzDz-Mc8790SDFLLZ44hJLSFD897894qg-FSJF89AA"
+          },
+          {
+            "name": "WEB_WORKERS",
+            "value": "1"
+          }
+        ]
+      }
+    ]
+  }
+  
