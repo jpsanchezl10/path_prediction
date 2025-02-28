@@ -3,7 +3,7 @@
     "containerDefinitions": [
       {
         "name": "application",
-        "image": "317587555772.dkr.ecr.us-east-2.amazonaws.com/virtualscale/end-of-utterance:latest",
+        "image": "317587555772.dkr.ecr.us-east-2.amazonaws.com/virtualscale/path_prediction:latest",
         "essential": true,
         "memory": 3800,
         "portMappings": [
@@ -25,4 +25,3 @@
       }
     ]
   }
-  
