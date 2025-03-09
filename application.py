@@ -92,7 +92,7 @@ async def websocket_endpoint(websocket: WebSocket):
 
             before = time()
 
-            selected_path,score = path_prediction_model.predict(user_input=user_input,path_descriptions=path_descriptions,threshold=0.3)
+            selected_path,score = path_prediction_model.classify_response(candidates=path_descriptions, user_answer=user_input, threshold=0.5)
 
             after = time()
             calculation_time = after - before

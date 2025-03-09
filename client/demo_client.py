@@ -3,12 +3,7 @@ import os
 import json
 import websockets
 from websockets.exceptions import ConnectionClosedError, InvalidURI
-
-path_descriptions = {
-    "A": "The user wants the first option, or something that sounds like Option A.",
-    "B": "The user wants the second option, or something that sounds like Option B.",
-    "C": "The user wants the third option, or something that sounds like Option C."
-}
+import time
 
 
 path_descriptions = {
@@ -16,6 +11,7 @@ path_descriptions = {
     "B": "When the lead asks for the technical support",
     "C": "When the lead asks for the customer support"
 }
+
 
 async def communicate_with_websocket():
     """
@@ -26,7 +22,7 @@ async def communicate_with_websocket():
     PATH_API_KEY = os.getenv("PATH_API_KEY") or "sk-A6878SHFDJLFDNDZuFDSJL8sZxJLFS790SDFJLzDz-Mc8790SDFLLZ44hJLSFD897894qg-FSJF89AA"
 
     # Define the WebSocket URI
-    uri = f"ws://localhost/v1/stream?api_key={PATH_API_KEY}"
+    uri = f"wss://path-prediction.virtualscale.xyz/v1/stream?api_key={PATH_API_KEY}"
 
     try:
         # Establish the WebSocket connection
@@ -49,12 +45,15 @@ async def communicate_with_websocket():
                 }
                 message_json = json.dumps(message)
 
+                start_time = time.time()
                 # Send the JSON message
                 await websocket.send(message_json)
                 print("Sent!")
 
                 # Wait for the server's response
                 response = await websocket.recv()
+                end_time = time.time()
+                print(f"Time taken: {end_time - start_time}")
                 response_data = json.loads(response)
 
                 print(f"Raw response received: {response_data}")
